@@ -8,4 +8,5 @@ This repo contains the results of some of these explorations. Some may also be t
 
 Key explorations include:
 
-- [Using orbital with xgboost](orbital-xgb.ipynb): `orbital` currently only supports SciKitLearn pipelines with native `scikit-learn` models. This notebook walks through a number of steps needed to get `orbital` working for `xgboost`
+- [Using orbital with xgboost](orbital-xgb.ipynb): `orbital` currently only supports SciKitLearn pipelines with native `scikit-learn` models. This notebook walks through a number of steps needed to get `orbital` working for `xgboost`. A similar pattern likely works for `LightGBM` also, but I have not tried it.
+- [Reformatting orbital output with `sqlglot`](orbital-fmt.ipynb): `orbital` query output is not formatted aesthetically and does not offer many customizations for adding/removing fields, etc. This demonstrates some example code snippets for cleaning, subseting, renaming, extending, and formatting the SQL output
