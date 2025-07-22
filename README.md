@@ -4,7 +4,7 @@
 
 I am very intrigued by the vision of this package. I can imagine a lot of incredibly valuable use cases, but also appreciate the nuance/challenge of maintaining such a package (and thus have hit on a number of the corner cases.)
 
-This repo contains the results of some of these explorations. Some may also be the subject of related blog posts on my [website](https:://emilyriederer.com).
+This repo contains the results of some of these explorations. Some may also be the subject of related blog posts on my [website](https://www.emilyriederer.com/).
 
 Key explorations include:
 
