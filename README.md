@@ -8,8 +8,6 @@ This repo contains the results of some of these explorations. Some may also be t
 
 *All explorations are intended to test features of `orbital`. They most definitely are not to show anything about decent modeling practices. I do weird stuff here on purpose to find the limits.*
 
-Key explorations include:
-
 **Stress Testing**: 
 
 - [Using orbital with xgboost](orbital-xgb.ipynb): `orbital` currently only supports SciKitLearn pipelines with native `scikit-learn` models. This notebook walks through a number of steps needed to get `orbital` working for `xgboost`. A similar pattern likely works for `LightGBM` also, but I have not tried it.
