@@ -12,6 +12,7 @@ dependencies = [
     "onnxmltools>=1.14.0",
     "orbital>=0.2.2",
     "pandas>=2.3.0",
+    "polars[pyarrow]>=1.31.0",
     "pyarrow>=20.0.0",
     "scikit-learn>=1.7.0",
     "sqlglot[rs]>=26.33.0",
