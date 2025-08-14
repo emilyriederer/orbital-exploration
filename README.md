@@ -10,6 +10,7 @@ This repo contains the results of some of these explorations. Some may also be t
 
 **Workflow**:
 
+- [Fully worked `dbt` + `orbital` example](dbt_orb_demo/README.md): Fully worked example that shows combining the best features of `dbt` and `orbital` for model deployment
 - [Reformatting orbital output with `sqlglot`](orbital-fmt.ipynb): `orbital` query output is not formatted aesthetically and does not offer many customizations for adding/removing fields, etc. This demonstrates some example code snippets for cleaning, subseting, renaming, extending, and formatting the SQL output
 - [Creating a separate pre-processing pipeline](orbital-pre.ipynb): `orbital` is able to translate an entire scikitlearn pipeline to SQL, including feature transformation and prediction. However, it may be preferable to have these steps separate (for reasons noted in the notebook). This shows how to make, deploy, and connect separate SQL logics for feature transformation and scoring. 
 - [Preparing orbital SQL to deploy in a dbt pipeline](orbital-dbt.ipynb): dbt models are a special type of Jinja-infused python, allowing the dbt enging to infer and execute a DAG. dbt is a popular tool for organizing datamarts, and has a lot of potential for use with `orbital`. Integration the two is as simple as passing a dbt `ref()` instead of a traditional table name.

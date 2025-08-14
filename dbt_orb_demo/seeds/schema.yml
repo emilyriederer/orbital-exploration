@@ -1,0 +1,37 @@
+version: 2
+
+seeds:
+  - name: demo
+    description: Customer demographic data
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests: &unique_not_null
+          - unique
+          - not_null
+  - name: bill
+    description: Customer billing data
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests:
+            - relationships:
+                to: ref('demo')
+                field: customer_id
+  - name: chrn
+    description: Customer resubscription / churn data
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests: *unique_not_null
+  - name: serv
+    description: Customer servicing data
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests: *unique_not_null
+      - name: internet_service
+        description: "Type of internet service"
+        data_tests:
+          - accepted_values:
+              values: ["DSL","Fiber optic","No"]

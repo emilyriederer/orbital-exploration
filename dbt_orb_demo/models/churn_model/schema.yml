@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: raw_feat
+    description: "Pre-joined features for churn model predictions"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests: &unique_not_null
+          - unique
+          - not_null
+  - name: raw_targ
+    description: "Derived churn target for churn model predictions"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests: *unique_not_null
+  - name: prep_feat
+    description: "Derived churn features for churn model predictions"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests: *unique_not_null
+  - name: pred_churn
+    description: "Churn model predictions"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        data_tests: *unique_not_null
