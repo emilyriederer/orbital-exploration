@@ -25,7 +25,7 @@ clean-targets:
 
 models:
   dbt_orb_demo:
-    + materialized: view
+    +materialized: view
 
 tests:
   +store_failures: true
