@@ -3,6 +3,7 @@ from sqlglot import parse_one, exp
 
 def clean_sql(sql_raw: str, 
               tbl_ref: str, 
+              model_version: str = None,
               col_id: str = 'id', 
               cols_renm: dict[str, str] = {'output_probability.1':'pred', 
                                            'output_probability.0': '0', 
@@ -50,6 +51,14 @@ def clean_sql(sql_raw: str,
         cte_select = ast.find(exp.CTE).this
         cte_select.expressions.append(col)
     ast = ast.select(col_id)
+
+    # add model version to outer query if desired
+    if model_version is not None:
+
+        col_version = exp.Alias(
+            this=exp.Literal.string(model_version), 
+            alias="model_version")
+        ast.find(exp.Select).expressions.append(col_version)
     
     # pretty print
     sql_fmt = sqlglot.transpile(ast.sql(), 
