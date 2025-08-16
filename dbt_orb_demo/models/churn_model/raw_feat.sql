@@ -1,9 +1,10 @@
 select 
-  * exclude (dt_renewal)
+  * exclude (dt_renewal, exclusion_reason)
 from 
-  {{ ref('serv') }}
+  {{ ref('raw_popn') }}
+  left join {{ ref('serv') }} using (customer_id)
   left join {{ ref('demo') }} using (customer_id)
   left join {{ ref('bill') }} using (customer_id)
 where
-  dt_renewal <= '{{ var('fake_today') }}'
+  exclusion_reason = 'None'
   
