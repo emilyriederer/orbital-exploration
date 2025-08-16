@@ -23,6 +23,7 @@ def clean_sql(sql_raw: str,
     ----------
     sql_raw: SQL string provided by `orbital`
     tbl_ref: Name of dbt model to be referenced in query's FROM clause
+    model_version: Version number of model to be added as own column. Defaults to None to add no column
     col_id: Name of the column representing the unique identifier of entities to be predicted
     cols_renm: Dictionary of {default_name: desired_name} to rename fields
 
