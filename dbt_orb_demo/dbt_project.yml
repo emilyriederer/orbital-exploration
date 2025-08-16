@@ -17,6 +17,7 @@ snapshot-paths: ["snapshots"]
 
 vars:
   fake_today: '2025-08-05'
+  train_percent: 0.8
   dbt_vars: ['fake_today']
 
 clean-targets:
@@ -31,12 +32,3 @@ tests:
   +store_failures: true
   +store_failues_as: view
   +schema: "audit"
-
-snapshots:
-  dbt_orb_demo:
-    pred_churn:
-      schema: snapshots
-      database: analytics
-      unique_key: customer_id
-      strategy: check
-      check_cols: ['pred']
