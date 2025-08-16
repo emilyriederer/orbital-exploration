@@ -29,8 +29,8 @@ def clean_sql(sql_raw: str,
 
     Returns
     -------
-    list
-        a list of strings used that are the header columns
+    str
+        A formatted and updated SQL query
     """
 
 
