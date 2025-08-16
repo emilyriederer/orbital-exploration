@@ -3,6 +3,8 @@ Welcome to your new dbt project!
 
 This project is a demo of deploying a ML model with `dbt`. 
 
+### Navigation
+
 In addition to a standard `dbt` project, it contains the following:
 
 - `setup/`: File to reproduce the datasets in the `seeds/` directory. This isn't something that is part of a realistic project or model deployment. It just breaks up a toy "one big table" dataset into something moderately more similar to what one would find in a database
@@ -12,17 +14,27 @@ In addition to a standard `dbt` project, it contains the following:
   + `compare_results.ipynb`: Confirms that we can recover the same results in python or via the database
   + `table_tour.ipynb`: Shows some of the resulting table structures
 
-To run:
+### Running Instructions
+
+0. Activate uv environment from the main directory
+
+1. Setup seeds & duckdb database:
 
 ```
-cd setup
-python prep-seeds.py
-cd ../model_dev
-python train-and-convert.py
-cd ..
+python setup/prep-seeds.py
 dbt seed
+```
+
+2. Train models and generate SQL in the `model_dev/train_and_convert.ipynb` notebook
+
+3. Run `dbt` project:
+
+```
 dbt run
 dbt test --store-failures
+dbt snapshot
 ```
+
+### Acknowledgements 
 
 Churn dataset is borrowed from IBM sample datasets: https://github.com/IBM/telco-customer-churn-on-icp4d/blob/master/data/Telco-Customer-Churn.csv
