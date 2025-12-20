@@ -19,6 +19,7 @@ This repo contains the results of some of these explorations. Some may also be t
 
 - [Using orbital with xgboost](orbital-xgb.ipynb): `orbital` currently only supports SciKitLearn pipelines with native `scikit-learn` models. This notebook walks through a number of steps needed to get `orbital` working for `xgboost`. A similar pattern likely works for `LightGBM` also, but I have not tried it.
 - [Evaluating performance for a large model](orbital-big.ipynb): Toy examples work great in `orbital`, but in reality, tree-based machine learning models can be very deep and complicated. This notebook tests how `orbital` scales up with model complexity for a larger random forest (maximum depth 10, 100 trees). Specifically, we see the value of cutting runtimes by only predicting the variables desired and by moving individual trees to a CTE (unrigorously and database dependent, TBH).
+- [CASE WHEN refactoring](orbital-nst.ipynb): Stress test of "linearized" (current R package default) versus nested CASE WHENs for tree-based model logic on request from Posit team 
 
 **Resolved**
 
